@@ -1,8 +1,8 @@
-##D#isc Scripts
+##Disc Scripts
 
 A set of scripts to automatically rip and transcode DVD's and CD's.
 
-##Features
+#Features
 
 #DVD's
 
