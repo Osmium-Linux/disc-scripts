@@ -18,7 +18,7 @@ while :; do
                            echo "Not ripped, beginning ripping."
 
                            #Rip DVD
-                           dvdbackup -pvFMi /dev/sr0 -o ../../Backups/
+                           dvdbackup -pvMi /dev/sr0 -o ../../Backups/
                       fi
               
        #Eject DVD after Rip
