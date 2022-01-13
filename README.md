@@ -6,7 +6,7 @@ A set of scripts to automatically rip and transcode DVD's and CD's.
 
 ###### DVD's
 
-Rip and transcode to Jellyfin compatible .mkv, will also preserve subtitles
+Rip DVD to raw format suitable for transcoding.
 
 ###### CD's
 

@@ -8,7 +8,6 @@ while :; do
        sleep 0.25
        echo "Disk is inserted"
        echo "Checking if DVD is already ripped"
-                   
                    currentdvd=$(pre="LABEL=";tmp=$(blkid /dev/sr0 -o export | grep LABEL=) ; echo "${tmp#$pre}" | tr -cd [:alnum:] | tr [:upper:] [:lower:])
                    dvdrips=$(dir | tr -cd [:alnum:] | tr [:upper:] [:lower:])
                    
@@ -17,12 +16,12 @@ while :; do
                            echo "Already ripped."
                       else
                            echo "Not ripped, beginning ripping."
+
+                           #Rip DVD
+                           dvdbackup -pvFMi /dev/sr0 -o ../../Backups/
                       fi
-       
-       #Begin Backup
-       dvdbackup -pvFMi /dev/sr0 -o ../Backups/
-       
-       #Eject DVD after Rip and Transcode
+              
+       #Eject DVD after Rip
        echo "eject /dev/sr0"
    
    #Check if DVD isn't inserted
@@ -31,15 +30,14 @@ while :; do
        
        #Eject DVD so user can insert
        echo "Disk is not inserted"
-       
-       
+       echo "eject /dev/sr0"
        
    #Exit if unexpected error
    else 
        sleep 0.25
        echo "Unexpected error, exiting"
        echo "Please open a Github issue."
-       echo "Errorcode 0001
+       echo "Errorcode 0001DVD"
        eject -n /dev/sr0
        exit
    fi
