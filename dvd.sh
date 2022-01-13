@@ -1,5 +1,8 @@
 #!/bin/env bash
 
+    #Slow down the drive before anything else
+    eject -x 12 /dev/sr0
+
     #Loop to constantly check if DVD is inserted or not
     while :; do
 
