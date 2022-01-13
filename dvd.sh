@@ -8,8 +8,8 @@ while :; do
        sleep 0.25
        echo "Disk is inserted"
        echo "Checking if DVD is already ripped"
-                   currentdvd=$(pre="LABEL=";tmp=$(blkid /dev/sr0 -o export | grep LABEL=) ; echo "${tmp#$pre}" | tr -cd [:alnum:] | tr [:upper:] [:lower:])
-                   dvdrips=$(dir | tr -cd [:alnum:] | tr [:upper:] [:lower:])
+                   currentdvd=$(pre="LABEL=";tmp=$(blkid /dev/sr0 -o export | grep LABEL=) ; echo "${tmp#"$pre"}" | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
+                   dvdrips=$(dir | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
                    
                       #See if current DVD has already been ripped
                       if [[ "$dvdrips" == *"$currentdvd"* ]]; then
@@ -23,7 +23,9 @@ while :; do
               
        #Eject DVD after Rip
        echo "eject /dev/sr0"
-   
+       sleep 2
+       clear
+
    #Check if DVD isn't inserted
    elif [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 2 ]]; then
        sleep 5
@@ -33,6 +35,8 @@ while :; do
        echo "Ejecting drive for insertion"
        echo "Waiting 5 seconds before checking again"
        echo "eject /dev/sr0"
+       sleep 2
+       clear
        
    #Exit if unexpected error
    else 
