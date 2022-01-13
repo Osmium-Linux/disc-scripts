@@ -1,18 +1,18 @@
-##Disc Scripts
+# Disc Scripts
 
 A set of scripts to automatically rip and transcode DVD's and CD's.
 
-#Features
+## Features
 
-#DVD's
+###### DVD's
 
 Rip and transcode to Jellyfin compatible .mkv, will also preserve subtitles
 
-#CD's
+###### CD's
 
 Rip to uncompressed .WAV in  highest possible quality. 
 
-#Troubleshooting
+## Troubleshooting
 
 Errorcodes:
 
