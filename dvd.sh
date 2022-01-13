@@ -9,7 +9,7 @@ while :; do
        echo "Disk is inserted"
        echo "Checking if DVD is already ripped"
                    currentdvd=$(pre="LABEL=";tmp=$(blkid /dev/sr0 -o export | grep LABEL=) ; echo "${tmp#"$pre"}" | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
-                   dvdrips=$(dir | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
+                   dvdrips=$(dir ../Backups/DVD/ | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
                    
                       #See if current DVD has already been ripped
                       if [[ "$dvdrips" == *"$currentdvd"* ]]; then
@@ -37,7 +37,7 @@ while :; do
        echo "eject /dev/sr0"
        sleep 2
        clear
-       
+
    #Exit if unexpected error
    else 
        sleep 0.25
