@@ -34,6 +34,7 @@
         echo "Waiting 5 seconds before checking again"
         echo "eject /dev/sr0"
         sleep 5
+        echo
 
     #Exit if unexpected error
     else 
@@ -42,7 +43,8 @@
         echo "Please open a Github issue."
         echo "Errorcode 0001DVD"
         eject -n /dev/sr0
-        sleep 0.25
+        sleep 5
+        echo
         exit
     fi
     done
