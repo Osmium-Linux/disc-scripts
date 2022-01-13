@@ -1,4 +1,4 @@
-    #!/bin/env bash
+#!/bin/env bash
 
     #Loop to constantly check if DVD is inserted or not
     while :; do
@@ -8,6 +8,7 @@
         sleep 0.25
         echo "Disk is inserted"
         echo "Checking if DVD is already ripped"
+                    mkdir -p ../Backups/DVD/ ;:
                     currentdvd=$(pre="LABEL=";tmp=$(blkid /dev/sr0 -o export | grep LABEL=) ; echo "${tmp#"$pre"}" | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
                     dvdrips=$(dir ../Backups/DVD/ | tr -cd '[:alnum:]' | tr '[:upper:]' '[:lower:]')
                     
