@@ -18,7 +18,7 @@ while :; do
                            echo "Not ripped, beginning ripping."
 
                            #Rip DVD
-                           dvdbackup -pvMi /dev/sr0 -o ../Backups/
+                           dvdbackup -pvMi /dev/sr0 -o ../Backups/DVD/
                       fi
               
        #Eject DVD after Rip
@@ -26,10 +26,12 @@ while :; do
    
    #Check if DVD isn't inserted
    elif [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 2 ]]; then
-       sleep 0.25
+       sleep 5
        
        #Eject DVD so user can insert
        echo "Disk is not inserted"
+       echo "Ejecting drive for insertion"
+       echo "Waiting 5 seconds before checking again"
        echo "eject /dev/sr0"
        
    #Exit if unexpected error
