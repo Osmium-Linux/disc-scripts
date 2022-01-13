@@ -12,6 +12,13 @@ Rip DVD to raw format suitable for transcoding.
 
 Rip to uncompressed .WAV in  highest possible quality. 
 
+## Dependencies
+
+###### DVD's
+dvdbackup
+
+###### CD's
+
 ## Usage
 
 1. Make a new folder. 
