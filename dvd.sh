@@ -16,7 +16,7 @@
                         if [[ "$dvdrips" == *"$currentdvd"* ]]; then
                             echo "Already ripped."
                         else
-                            echo "Not ripped, beginning ripping."
+                            echo "Not ripped, starting rip."
 
                             #Rip DVD
                             dvdbackup -pvMi /dev/sr0 -o ../Backups/DVD/
