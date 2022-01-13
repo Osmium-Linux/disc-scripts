@@ -14,6 +14,6 @@ Rip to uncompressed .WAV in  highest possible quality.
 
 ## Troubleshooting
 
-Errorcodes:
+###### Errorcodes
 
 0001DVD: The script could not check if there was a DVD inserted. Add a "set -x" flag below the shebang and post the output in an issue.
