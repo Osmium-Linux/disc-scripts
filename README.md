@@ -12,6 +12,15 @@ Rip and transcode to Jellyfin compatible .mkv, will also preserve subtitles
 
 Rip to uncompressed .WAV in  highest possible quality. 
 
+## Usage
+
+1. Make a new folder. 
+2. Clone this repository within this new folder ( /.../yourfolder/disc-scripts/ )
+3. Edit the "cd-drive" and "dvd-drive" files with the path to your cd and dvd drives. (Usually the same at /dev/sr0)
+4. Run one of the scripts (dvd.sh or cd.sh) at a time, unless you have two separate drives.
+5. The drive will eject if it has completed ripping, or if it has already been ripped. Status messages will appear on the screen.
+6. You've ripped a DVD/CD!
+
 ## Troubleshooting
 
 ###### Errorcodes
