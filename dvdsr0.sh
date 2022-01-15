@@ -28,8 +28,9 @@
                         fi
                 
         #Eject DVD after Rip
+        echo "Rip completed, ejecting drive"
         eject /dev/sr0
-        sleep 2
+        sleep 5
 
     #Check if DVD isn't inserted
     elif [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 2 ]]; then
