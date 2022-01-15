@@ -6,6 +6,8 @@
     #Loop to constantly check if DVD is inserted or not
     while :; do
 
+    sleep 5
+
     inserted=$(blkid /dev/sr1 > /dev/null; echo $?)
 
     #Check if DVD inserted
