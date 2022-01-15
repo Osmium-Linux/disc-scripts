@@ -6,8 +6,10 @@
     #Loop to constantly check if DVD is inserted or not
     while :; do
 
+    inserted=$(blkid /dev/sr0 > /dev/null; echo $?)
+
     #Check if DVD inserted
-    if [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 0 ]]; then
+    if [[ "$inserted" == 0 ]]; then
         sleep 0.25
         echo "Disk is inserted"
         echo "Checking if DVD is already ripped"
@@ -26,17 +28,17 @@
                         fi
                 
         #Eject DVD after Rip
-        echo "eject /dev/sr0"
+        eject /dev/sr0
         sleep 2
 
     #Check if DVD isn't inserted
-    elif [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 2 ]]; then
+    elif [[ "$inserted" == 2 ]]; then
         
         #Eject DVD so user can insert
         echo "Disk is not inserted"
         echo "Ejecting drive for insertion"
         echo "Waiting 5 seconds before checking again"
-        echo "eject /dev/sr0"
+        eject /dev/sr0
         sleep 5
         echo
 
