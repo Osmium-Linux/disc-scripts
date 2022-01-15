@@ -6,12 +6,10 @@
     #Loop to constantly check if DVD is inserted or not
     while :; do
 
-    sleep 5
-
-    inserted=$(blkid /dev/sr0 > /dev/null; echo $?)
+    clear
 
     #Check if DVD inserted
-    if [[ "$inserted" == 0 ]]; then
+    if [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 0 ]]; then
         sleep 0.25
         echo "Disk is inserted"
         echo "Checking if DVD is already ripped"
@@ -34,7 +32,7 @@
         sleep 2
 
     #Check if DVD isn't inserted
-    elif [[ "$inserted" == 2 ]]; then
+    elif [[ $(blkid /dev/sr0 > /dev/null; echo $?) == 2 ]]; then
         
         #Eject DVD so user can insert
         echo "Disk is not inserted"
@@ -46,13 +44,9 @@
 
     #Exit if unexpected error
     else 
-
-        echo "Unexpected error, exiting"
-        echo "Please open a Github issue."
-        echo "Errorcode 0001DVD"
+        echo "Could not read if DVD was inserted or not"
+        echo "This can sometimes happen if the drive detects the DVD between checks"
+        echo "Restarting"
         eject -n /dev/sr0
-        sleep 5
-        echo
-        exit
     fi
     done
