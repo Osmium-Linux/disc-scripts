@@ -24,7 +24,7 @@
                             echo "Not ripped, starting rip."
 
                             #Rip DVD
-                            dvdbackup -pvMi /dev/sr1 -o ../Backups/DVD/
+                            dvdbackup -pMi /dev/sr1 -o ../Backups/DVD/
                         fi
                 
         #Eject DVD after Rip
